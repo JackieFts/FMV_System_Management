@@ -1,0 +1,1 @@
+Scaffold-Dbcontext "" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Tables "T_COM_CUSTOMER","T_COM_SEQUENCE","T_COM_STAFF","T_HIS_PARTIN","T_HIS_PARTOUTT_INFO_JIG","T_INFO_PART","T_SLOGAN","T_SYS_FUNC","T_SYS_RIGHT","T_SYS_GROUP","T_SYS_USER","v_JIG_INFO" -context Entities -contextdir Repository -DataAnnotations -Force
