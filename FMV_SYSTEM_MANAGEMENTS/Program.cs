@@ -31,8 +31,8 @@ namespace FMV_SYSTEM_MANAGEMENTS
                     {
                         Application.EnableVisualStyles();
                         Application.SetCompatibleTextRenderingDefault(false);
-                        //Application.Run(new fFirst_Login());
-                        Application.Run(new fMonthly());
+                        Application.Run(new fFirst_Login());
+                        //Application.Run(new fMonthly());
                         //Application.Run(new fTest2());
                     }
                 }
