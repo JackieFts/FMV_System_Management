@@ -113,7 +113,7 @@ namespace FMV_SYSTEM_MANAGEMENTS.Test
 
             }
         }
-        string selectedColumName = "";
+        //string selectedColumName = "";
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedCells.Count > 0)

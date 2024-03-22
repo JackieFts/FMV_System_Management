@@ -85,11 +85,11 @@ namespace FMV_SYSTEM_MANAGEMENT
         {
             if (_idcus == "" || _idcus == null)
             {
-                MessageBox.Show("Pls click into row data first !");
+                XtraMessageBox.Show("Pls click into row data first !");
             }
             else
             {
-                if (MessageBox.Show("Are you sure to delete ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Are you sure to delete ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     await _cus.Delete(_idcus);
                     await this.loadCus();
@@ -101,7 +101,7 @@ namespace FMV_SYSTEM_MANAGEMENT
 
         private async void btnClear_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to Clear Database ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Are you sure to Clear Database ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 MyFunc.truncateTable("dbo.T_COM_CUSTOMER");
                 await loadCus();
@@ -114,7 +114,7 @@ namespace FMV_SYSTEM_MANAGEMENT
             {
                 if (tbID.Text == "" || tbName.Text == "")
                 {
-                    MessageBox.Show("Pls Type data first !");
+                    XtraMessageBox.Show("Pls Type data first !");
                 }
                 else
                 {
@@ -134,7 +134,7 @@ namespace FMV_SYSTEM_MANAGEMENT
             {
                 if (_idcus == "" || _idcus == null)
                 {
-                    MessageBox.Show("Pls click into row data first !");
+                    XtraMessageBox.Show("Pls click into row data first !");
                 }
                 else
                 {

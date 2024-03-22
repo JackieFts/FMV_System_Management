@@ -20,7 +20,7 @@ namespace FMV_SYSTEM_MANAGEMENTS
     public class MyFunc
     {
         private static SqlConnection conn = new SqlConnection();
-        private static string connString = "Data Source=123.24.143.156;Initial Catalog=MyStockDB;User ID=sa;Password=Tai@1234;TrustServerCertificate=True";
+        private static string connString = "Data Source=123.24.143.156;Initial Catalog=MyStockDB;User ID=InventoryUser;Password=Tai@1368;TrustServerCertificate=True";
 
         public static bool OpenConnect()
         {

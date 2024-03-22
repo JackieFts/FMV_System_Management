@@ -39,5 +39,19 @@ namespace FMV_SYSTEM_MANAGEMENTS.Models
         public virtual DbSet<View_HIS_PARTIN> View_HIS_PARTIN { get; set; }
         public virtual DbSet<T_INFO_JIG> T_INFO_JIG { get; set; }
         public virtual DbSet<T_INFO_PART> T_INFO_PART { get; set; }
+        public virtual DbSet<T_INFO_FMA_EXPLAIN> T_INFO_FMA_EXPLAIN { get; set; }
+        public virtual DbSet<T_INFO_FMA_INDETAIL> T_INFO_FMA_INDETAIL { get; set; }
+        public virtual DbSet<T_INFO_FMA_OUTDETAIL> T_INFO_FMA_OUTDETAIL { get; set; }
+        public virtual DbSet<T_INFO_FMA_STK> T_INFO_FMA_STK { get; set; }
+        public virtual DbSet<T_INFO_FMV_FORSALE> T_INFO_FMV_FORSALE { get; set; }
+        public virtual DbSet<T_INFO_FMV_HIS> T_INFO_FMV_HIS { get; set; }
+        public virtual DbSet<T_INFO_FMV_STK> T_INFO_FMV_STK { get; set; }
+        public virtual DbSet<View_INFO_FMA_STK> View_INFO_FMA_STK { get; set; }
+        public virtual DbSet<View_INFO_FMV_FORSALE> View_INFO_FMV_FORSALE { get; set; }
+        public virtual DbSet<View_INFO_FMV_HIS> View_INFO_FMV_HIS { get; set; }
+        public virtual DbSet<View_INFO_FMV_STK> View_INFO_FMV_STK { get; set; }
+        public virtual DbSet<T_REP_MCTYPE> T_REP_MCTYPE { get; set; }
+        public virtual DbSet<T_REP_MONTHLY> T_REP_MONTHLY { get; set; }
+        public virtual DbSet<View_REP_MONTHLY> View_REP_MONTHLY { get; set; }
     }
 }

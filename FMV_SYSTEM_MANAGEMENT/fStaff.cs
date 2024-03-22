@@ -85,7 +85,7 @@ namespace FMV_SYSTEM_MANAGEMENT
         {
             if (_idstaff > 0)
             {
-                if (MessageBox.Show("Are you sure to delete ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (XtraMessageBox.Show("Are you sure to delete ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     await _staff.Delete(_idstaff);
                     await this.loadStaff();
@@ -95,13 +95,13 @@ namespace FMV_SYSTEM_MANAGEMENT
             }
             else
             {
-                MessageBox.Show("Pls click into row data first !");
+                XtraMessageBox.Show("Pls click into row data first !");
             }
         }
 
         private async void btnClear_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to Clear Database ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Are you sure to Clear Database ?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 MyFunc.truncateTable("dbo.T_COM_STAFF");
                 await loadStaff();
@@ -114,7 +114,7 @@ namespace FMV_SYSTEM_MANAGEMENT
             {
                 if (tbName.Text == "" || tbDepartment.Text == "" || tbPosition.Text == "")
                 {
-                    MessageBox.Show("Pls Type data first !");
+                    XtraMessageBox.Show("Pls Type data first !");
                 }
                 else
                 {
@@ -146,7 +146,7 @@ namespace FMV_SYSTEM_MANAGEMENT
                 }
                 else
                 {
-                    MessageBox.Show("Pls click into row data first !");
+                    XtraMessageBox.Show("Pls click into row data first !");
                 }
             }
             _add = false;

@@ -34,8 +34,8 @@ namespace FMV_SYSTEM_MANAGEMENTS.Models
             SqlConnectionStringBuilder sqlConnectBuilder = new SqlConnectionStringBuilder();
             sqlBuilder.DataSource = "123.24.143.156";
             sqlBuilder.InitialCatalog = "MyStockDB";
-            sqlBuilder.UserID = "sa";
-            sqlBuilder.Password = "Tai@1234";
+            sqlBuilder.UserID = "InventoryUser";
+            sqlBuilder.Password = "Tai@1368";
 
             string sqlConnectionString = sqlBuilder.ConnectionString + ";TrustServerCertificate=True";
             EntityConnectionStringBuilder entityBuilder = new EntityConnectionStringBuilder();
@@ -49,6 +49,11 @@ namespace FMV_SYSTEM_MANAGEMENTS.Models
             EntityConnection connection = new EntityConnection(entityBuilder.ConnectionString);
 
             return new Entities(connection);
+        }
+
+        public void TruncateTable(string tableName)
+        {
+            Database.ExecuteSqlCommand($"TRUNCATE TABLE {tableName}");
         }
     }
 }

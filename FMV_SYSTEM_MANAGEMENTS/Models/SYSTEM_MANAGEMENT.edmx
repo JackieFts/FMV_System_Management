@@ -76,6 +76,132 @@
           <Property Name="REMARK" Type="nvarchar" MaxLength="2000" />
           <Property Name="STATUS" Type="bit" />
         </EntityType>
+        <EntityType Name="T_INFO_FMA_EXPLAIN">
+          <Key>
+            <PropertyRef Name="IDEXPLAIN" />
+          </Key>
+          <Property Name="IDEXPLAIN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="500" />
+          <Property Name="REMARK" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMA_INDETAIL">
+          <Key>
+            <PropertyRef Name="IDINDETAIL" />
+            <PropertyRef Name="IDFMA" />
+          </Key>
+          <Property Name="IDINDETAIL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDFMA" Type="int" Nullable="false" />
+          <Property Name="CATEGORY" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QTY" Type="int" />
+          <Property Name="QTY_UNIT" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="LOCATION_SHELFNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="BOXNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="FMVTJ_CODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="RACK" Type="nvarchar" MaxLength="300" />
+          <Property Name="REMARK" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMA_OUTDETAIL">
+          <Key>
+            <PropertyRef Name="IDOUTDETAIL" />
+            <PropertyRef Name="IDFMA" />
+          </Key>
+          <Property Name="IDOUTDETAIL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDFMA" Type="int" Nullable="false" />
+          <Property Name="CATEGORY" Type="nvarchar" MaxLength="50" />
+          <Property Name="QTY" Type="int" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="RACK" Type="nvarchar" MaxLength="500" />
+          <Property Name="HISTORY" Type="nvarchar" MaxLength="500" />
+          <Property Name="REMARK" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMA_STK">
+          <Key>
+            <PropertyRef Name="IDFMASTK" />
+          </Key>
+          <Property Name="IDFMASTK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="PRODCODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="RATING" Type="nvarchar" MaxLength="100" />
+          <Property Name="SERIAL" Type="nvarchar" MaxLength="500" />
+          <Property Name="BALANCE" Type="int" />
+          <Property Name="UNIT_COST_SGD" Type="money" />
+          <Property Name="REMARK" Type="nvarchar(max)" />
+          <Property Name="DIFF" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+          <Property Name="CREATE_BY" Type="int" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="UPDATE_BY" Type="int" />
+          <Property Name="READY" Type="bit" />
+          <Property Name="QRCODE" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMV_FORSALE">
+          <Key>
+            <PropertyRef Name="IDFMVSALE" />
+          </Key>
+          <Property Name="IDFMVSALE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="PARTNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="RATING" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="SERIALNO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ORIGIN" Type="nvarchar" MaxLength="100" />
+          <Property Name="BALANCE" Type="int" />
+          <Property Name="UNIT_COST_JPY" Type="money" />
+          <Property Name="REMARK" Type="nvarchar(max)" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+          <Property Name="CREATE_BY" Type="int" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="UPDATE_BY" Type="int" />
+          <Property Name="READY" Type="bit" />
+          <Property Name="QRCODE" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMV_HIS">
+          <Key>
+            <PropertyRef Name="IDFMVHIS" />
+          </Key>
+          <Property Name="IDFMVHIS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="PRODCODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="RATING" Type="nvarchar" MaxLength="100" />
+          <Property Name="SERIALNO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="BALANCE" Type="int" />
+          <Property Name="UNIT_COST_SGD" Type="money" />
+          <Property Name="REMARK" Type="nvarchar(max)" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+          <Property Name="CREATE_BY" Type="int" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="UPDATE_BY" Type="int" />
+          <Property Name="READY" Type="bit" />
+          <Property Name="QRCODE" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMV_STK">
+          <Key>
+            <PropertyRef Name="IDFMVSTK" />
+          </Key>
+          <Property Name="IDFMVSTK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="PARTNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="SERIALNO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="RATING" Type="nvarchar" MaxLength="100" />
+          <Property Name="BALANCE" Type="int" />
+          <Property Name="UNIT_COST" Type="money" />
+          <Property Name="REMARK" Type="nvarchar(max)" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+          <Property Name="CREATE_BY" Type="int" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="UPDATE_BY" Type="int" />
+          <Property Name="READY" Type="bit" />
+          <Property Name="QRCODE" Type="nvarchar" MaxLength="8" />
+        </EntityType>
         <EntityType Name="T_INFO_JIG">
           <Key>
             <PropertyRef Name="IDJIG" />
@@ -127,6 +253,38 @@
           <Property Name="UPDATE_DATE" Type="datetime" />
           <Property Name="UPDATE_BY" Type="int" />
           <Property Name="STATUS" Type="bit" />
+        </EntityType>
+        <EntityType Name="T_REP_MCTYPE">
+          <Key>
+            <PropertyRef Name="IDMCTYPE" />
+          </Key>
+          <Property Name="IDMCTYPE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BRAND" Type="nvarchar" MaxLength="50" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_REP_MONTHLY">
+          <Key>
+            <PropertyRef Name="IDMONTHLY" />
+          </Key>
+          <Property Name="IDMONTHLY" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCUSTOMER" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDSTAFF" Type="int" Nullable="false" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="DAY" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHECKIN" Type="time" Precision="7" />
+          <Property Name="CHECKOUT" Type="time" Precision="7" />
+          <Property Name="IDMCTYPE" Type="int" />
+          <Property Name="LINE_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="INSTALLATION_DATE" Type="date" />
+          <Property Name="ACTIVITY" Type="nvarchar(max)" />
+          <Property Name="TRANSPORT" Type="int" />
+          <Property Name="SRNO" Type="nvarchar" MaxLength="50" />
+          <Property Name="NATURE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CHARGEABLE" Type="money" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+          <Property Name="CREATE_BY" Type="int" />
+          <Property Name="UPDATE_DATE" Type="datetime" />
+          <Property Name="UPDATE_BY" Type="int" />
         </EntityType>
         <EntityType Name="T_SLOGAN">
           <Key>
@@ -234,14 +392,190 @@ warning 6002: The table/view 'MyStockDB.dbo.View_HIS_PARTOUT' does not have a pr
           <Property Name="CUSTOMERNAME" Type="nvarchar" MaxLength="100" />
           <Property Name="STAFFNAME" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyStockDB.dbo.View_INFO_FMA_STK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_INFO_FMA_STK">
+          <Key>
+            <PropertyRef Name="IDFMASTK" />
+            <PropertyRef Name="CATEGORY" />
+          </Key>
+          <Property Name="IDFMASTK" Type="int" Nullable="false" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="PRODCODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="RATING" Type="nvarchar" MaxLength="100" />
+          <Property Name="SERIAL" Type="nvarchar" MaxLength="500" />
+          <Property Name="BALANCE" Type="int" />
+          <Property Name="UNIT_COST_SGD" Type="money" />
+          <Property Name="REMARK" Type="nvarchar(max)" />
+          <Property Name="DIFF" Type="nvarchar" MaxLength="50" />
+          <Property Name="QTY" Type="int" />
+          <Property Name="QTY_UNIT" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="LOCATION_SHELFNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="BOXNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="FMVTJ_CODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="RACK" Type="nvarchar" MaxLength="300" />
+          <Property Name="IN_REMARK" Type="nvarchar" MaxLength="4000" />
+          <Property Name="OUT_QTY" Type="int" />
+          <Property Name="OUT_DATE" Type="datetime" />
+          <Property Name="OUT_RACK" Type="nvarchar" MaxLength="500" />
+          <Property Name="HISTORY" Type="nvarchar" MaxLength="500" />
+          <Property Name="OUT_REMARK" Type="nvarchar" MaxLength="500" />
+          <Property Name="CATEGORY" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="READY" Type="bit" />
+          <Property Name="QRCODE" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyStockDB.dbo.View_INFO_FMV_FORSALE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_INFO_FMV_FORSALE">
+          <Key>
+            <PropertyRef Name="IDFMVSALE" />
+            <PropertyRef Name="CATEGORY" />
+          </Key>
+          <Property Name="IDFMVSALE" Type="int" Nullable="false" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="PARTNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="RATING" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="SERIALNO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ORIGIN" Type="nvarchar" MaxLength="100" />
+          <Property Name="BALANCE" Type="int" />
+          <Property Name="UNIT_COST_JPY" Type="money" />
+          <Property Name="REMARK" Type="nvarchar(max)" />
+          <Property Name="QTY" Type="int" />
+          <Property Name="QTY_UNIT" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="LOCATION_SHELFNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="BOXNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="FMVTJ_CODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="RACK" Type="nvarchar" MaxLength="300" />
+          <Property Name="IN_REMARK" Type="nvarchar" MaxLength="4000" />
+          <Property Name="OUT_QTY" Type="int" />
+          <Property Name="OUT_DATE" Type="datetime" />
+          <Property Name="OUT_RACK" Type="nvarchar" MaxLength="500" />
+          <Property Name="HISTORY" Type="nvarchar" MaxLength="500" />
+          <Property Name="OUT_REMARK" Type="nvarchar" MaxLength="500" />
+          <Property Name="CATEGORY" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="READY" Type="bit" />
+          <Property Name="QRCODE" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyStockDB.dbo.View_INFO_FMV_HIS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_INFO_FMV_HIS">
+          <Key>
+            <PropertyRef Name="IDFMVHIS" />
+            <PropertyRef Name="CATEGORY" />
+          </Key>
+          <Property Name="IDFMVHIS" Type="int" Nullable="false" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="PRODCODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="RATING" Type="nvarchar" MaxLength="100" />
+          <Property Name="SERIALNO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="BALANCE" Type="int" />
+          <Property Name="UNIT_COST_SGD" Type="money" />
+          <Property Name="REMARK" Type="nvarchar(max)" />
+          <Property Name="QTY" Type="int" />
+          <Property Name="QTY_UNIT" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="LOCATION_SHELFNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="BOXNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="FMVTJ_CODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="RACK" Type="nvarchar" MaxLength="300" />
+          <Property Name="IN_REMARK" Type="nvarchar" MaxLength="4000" />
+          <Property Name="OUT_QTY" Type="int" />
+          <Property Name="OUT_DATE" Type="datetime" />
+          <Property Name="OUT_RACK" Type="nvarchar" MaxLength="500" />
+          <Property Name="HISTORY" Type="nvarchar" MaxLength="500" />
+          <Property Name="OUT_REMARK" Type="nvarchar" MaxLength="500" />
+          <Property Name="CATEGORY" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="READY" Type="bit" />
+          <Property Name="QRCODE" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyStockDB.dbo.View_INFO_FMV_STK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_INFO_FMV_STK">
+          <Key>
+            <PropertyRef Name="IDFMVSTK" />
+            <PropertyRef Name="CATEGORY" />
+          </Key>
+          <Property Name="IDFMVSTK" Type="int" Nullable="false" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="100" />
+          <Property Name="PARTNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="SERIALNO" Type="nvarchar" MaxLength="1000" />
+          <Property Name="RATING" Type="nvarchar" MaxLength="100" />
+          <Property Name="BALANCE" Type="int" />
+          <Property Name="UNIT_COST" Type="money" />
+          <Property Name="REMARK" Type="nvarchar(max)" />
+          <Property Name="QTY" Type="int" />
+          <Property Name="QTY_UNIT" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="LOCATION_SHELFNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="BOXNO" Type="nvarchar" MaxLength="200" />
+          <Property Name="FMVTJ_CODE" Type="nvarchar" MaxLength="200" />
+          <Property Name="RACK" Type="nvarchar" MaxLength="300" />
+          <Property Name="IN_REMARK" Type="nvarchar" MaxLength="4000" />
+          <Property Name="OUT_QTY" Type="int" />
+          <Property Name="OUT_DATE" Type="datetime" />
+          <Property Name="OUT_RACK" Type="nvarchar" MaxLength="500" />
+          <Property Name="HISTORY" Type="nvarchar" MaxLength="500" />
+          <Property Name="OUT_REMARK" Type="nvarchar" MaxLength="500" />
+          <Property Name="CATEGORY" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="READY" Type="bit" />
+          <Property Name="QRCODE" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyStockDB.dbo.View_REP_MONTHLY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_REP_MONTHLY">
+          <Key>
+            <PropertyRef Name="IDMONTHLY" />
+            <PropertyRef Name="IDCUSTOMER" />
+            <PropertyRef Name="IDSTAFF" />
+          </Key>
+          <Property Name="IDMONTHLY" Type="int" Nullable="false" />
+          <Property Name="IDCUSTOMER" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDSTAFF" Type="int" Nullable="false" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="DAY" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHECKIN" Type="time" Precision="7" />
+          <Property Name="CHECKOUT" Type="time" Precision="7" />
+          <Property Name="IDMCTYPE" Type="int" />
+          <Property Name="LINE_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="INSTALLATION_DATE" Type="date" />
+          <Property Name="ACTIVITY" Type="nvarchar(max)" />
+          <Property Name="TRANSPORT" Type="int" />
+          <Property Name="SRNO" Type="nvarchar" MaxLength="50" />
+          <Property Name="NATURE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CHARGEABLE" Type="money" />
+          <Property Name="STAFFNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="CUSTOMERNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="MCTYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="BRAND" Type="nvarchar" MaxLength="50" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+        </EntityType>
         <EntityContainer Name="MyStockDBModelStoreContainer">
           <EntitySet Name="T_COM_CUSTOMER" EntityType="Self.T_COM_CUSTOMER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_COM_SEQUENCE" EntityType="Self.T_COM_SEQUENCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_COM_STAFF" EntityType="Self.T_COM_STAFF" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_HIS_PARTIN" EntityType="Self.T_HIS_PARTIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_HIS_PARTOUT" EntityType="Self.T_HIS_PARTOUT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_INFO_FMA_EXPLAIN" EntityType="Self.T_INFO_FMA_EXPLAIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_INFO_FMA_INDETAIL" EntityType="Self.T_INFO_FMA_INDETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_INFO_FMA_OUTDETAIL" EntityType="Self.T_INFO_FMA_OUTDETAIL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_INFO_FMA_STK" EntityType="Self.T_INFO_FMA_STK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_INFO_FMV_FORSALE" EntityType="Self.T_INFO_FMV_FORSALE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_INFO_FMV_HIS" EntityType="Self.T_INFO_FMV_HIS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_INFO_FMV_STK" EntityType="Self.T_INFO_FMV_STK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_INFO_JIG" EntityType="Self.T_INFO_JIG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_INFO_PART" EntityType="Self.T_INFO_PART" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_REP_MCTYPE" EntityType="Self.T_REP_MCTYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_REP_MONTHLY" EntityType="Self.T_REP_MONTHLY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_SLOGAN" EntityType="Self.T_SLOGAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_SYS_FUNC" EntityType="Self.T_SYS_FUNC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_SYS_GROUP" EntityType="Self.T_SYS_GROUP" Schema="dbo" store:Type="Tables" />
@@ -287,6 +621,152 @@ warning 6002: The table/view 'MyStockDB.dbo.View_HIS_PARTOUT' does not have a pr
     [View_HIS_PARTOUT].[CUSTOMERNAME] AS [CUSTOMERNAME], 
     [View_HIS_PARTOUT].[STAFFNAME] AS [STAFFNAME]
     FROM [dbo].[View_HIS_PARTOUT] AS [View_HIS_PARTOUT]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_INFO_FMA_STK" EntityType="Self.View_INFO_FMA_STK" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_INFO_FMA_STK].[IDFMASTK] AS [IDFMASTK], 
+    [View_INFO_FMA_STK].[MCTYPE] AS [MCTYPE], 
+    [View_INFO_FMA_STK].[STATUS] AS [STATUS], 
+    [View_INFO_FMA_STK].[PRODCODE] AS [PRODCODE], 
+    [View_INFO_FMA_STK].[DESCRIPTION] AS [DESCRIPTION], 
+    [View_INFO_FMA_STK].[RATING] AS [RATING], 
+    [View_INFO_FMA_STK].[SERIAL] AS [SERIAL], 
+    [View_INFO_FMA_STK].[BALANCE] AS [BALANCE], 
+    [View_INFO_FMA_STK].[UNIT_COST_SGD] AS [UNIT_COST_SGD], 
+    [View_INFO_FMA_STK].[REMARK] AS [REMARK], 
+    [View_INFO_FMA_STK].[DIFF] AS [DIFF], 
+    [View_INFO_FMA_STK].[QTY] AS [QTY], 
+    [View_INFO_FMA_STK].[QTY_UNIT] AS [QTY_UNIT], 
+    [View_INFO_FMA_STK].[DATE] AS [DATE], 
+    [View_INFO_FMA_STK].[LOCATION_SHELFNO] AS [LOCATION_SHELFNO], 
+    [View_INFO_FMA_STK].[BOXNO] AS [BOXNO], 
+    [View_INFO_FMA_STK].[FMVTJ_CODE] AS [FMVTJ_CODE], 
+    [View_INFO_FMA_STK].[RACK] AS [RACK], 
+    [View_INFO_FMA_STK].[IN_REMARK] AS [IN_REMARK], 
+    [View_INFO_FMA_STK].[OUT_QTY] AS [OUT_QTY], 
+    [View_INFO_FMA_STK].[OUT_DATE] AS [OUT_DATE], 
+    [View_INFO_FMA_STK].[OUT_RACK] AS [OUT_RACK], 
+    [View_INFO_FMA_STK].[HISTORY] AS [HISTORY], 
+    [View_INFO_FMA_STK].[OUT_REMARK] AS [OUT_REMARK], 
+    [View_INFO_FMA_STK].[CATEGORY] AS [CATEGORY], 
+    [View_INFO_FMA_STK].[READY] AS [READY], 
+    [View_INFO_FMA_STK].[QRCODE] AS [QRCODE]
+    FROM [dbo].[View_INFO_FMA_STK] AS [View_INFO_FMA_STK]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_INFO_FMV_FORSALE" EntityType="Self.View_INFO_FMV_FORSALE" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_INFO_FMV_FORSALE].[IDFMVSALE] AS [IDFMVSALE], 
+    [View_INFO_FMV_FORSALE].[MCTYPE] AS [MCTYPE], 
+    [View_INFO_FMV_FORSALE].[PARTNO] AS [PARTNO], 
+    [View_INFO_FMV_FORSALE].[STATUS] AS [STATUS], 
+    [View_INFO_FMV_FORSALE].[RATING] AS [RATING], 
+    [View_INFO_FMV_FORSALE].[DESCRIPTION] AS [DESCRIPTION], 
+    [View_INFO_FMV_FORSALE].[SERIALNO] AS [SERIALNO], 
+    [View_INFO_FMV_FORSALE].[ORIGIN] AS [ORIGIN], 
+    [View_INFO_FMV_FORSALE].[BALANCE] AS [BALANCE], 
+    [View_INFO_FMV_FORSALE].[UNIT_COST_JPY] AS [UNIT_COST_JPY], 
+    [View_INFO_FMV_FORSALE].[REMARK] AS [REMARK], 
+    [View_INFO_FMV_FORSALE].[QTY] AS [QTY], 
+    [View_INFO_FMV_FORSALE].[QTY_UNIT] AS [QTY_UNIT], 
+    [View_INFO_FMV_FORSALE].[DATE] AS [DATE], 
+    [View_INFO_FMV_FORSALE].[LOCATION_SHELFNO] AS [LOCATION_SHELFNO], 
+    [View_INFO_FMV_FORSALE].[BOXNO] AS [BOXNO], 
+    [View_INFO_FMV_FORSALE].[FMVTJ_CODE] AS [FMVTJ_CODE], 
+    [View_INFO_FMV_FORSALE].[RACK] AS [RACK], 
+    [View_INFO_FMV_FORSALE].[IN_REMARK] AS [IN_REMARK], 
+    [View_INFO_FMV_FORSALE].[OUT_QTY] AS [OUT_QTY], 
+    [View_INFO_FMV_FORSALE].[OUT_DATE] AS [OUT_DATE], 
+    [View_INFO_FMV_FORSALE].[OUT_RACK] AS [OUT_RACK], 
+    [View_INFO_FMV_FORSALE].[HISTORY] AS [HISTORY], 
+    [View_INFO_FMV_FORSALE].[OUT_REMARK] AS [OUT_REMARK], 
+    [View_INFO_FMV_FORSALE].[CATEGORY] AS [CATEGORY], 
+    [View_INFO_FMV_FORSALE].[READY] AS [READY], 
+    [View_INFO_FMV_FORSALE].[QRCODE] AS [QRCODE]
+    FROM [dbo].[View_INFO_FMV_FORSALE] AS [View_INFO_FMV_FORSALE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_INFO_FMV_HIS" EntityType="Self.View_INFO_FMV_HIS" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_INFO_FMV_HIS].[IDFMVHIS] AS [IDFMVHIS], 
+    [View_INFO_FMV_HIS].[MCTYPE] AS [MCTYPE], 
+    [View_INFO_FMV_HIS].[STATUS] AS [STATUS], 
+    [View_INFO_FMV_HIS].[PRODCODE] AS [PRODCODE], 
+    [View_INFO_FMV_HIS].[DESCRIPTION] AS [DESCRIPTION], 
+    [View_INFO_FMV_HIS].[RATING] AS [RATING], 
+    [View_INFO_FMV_HIS].[SERIALNO] AS [SERIALNO], 
+    [View_INFO_FMV_HIS].[BALANCE] AS [BALANCE], 
+    [View_INFO_FMV_HIS].[UNIT_COST_SGD] AS [UNIT_COST_SGD], 
+    [View_INFO_FMV_HIS].[REMARK] AS [REMARK], 
+    [View_INFO_FMV_HIS].[QTY] AS [QTY], 
+    [View_INFO_FMV_HIS].[QTY_UNIT] AS [QTY_UNIT], 
+    [View_INFO_FMV_HIS].[DATE] AS [DATE], 
+    [View_INFO_FMV_HIS].[LOCATION_SHELFNO] AS [LOCATION_SHELFNO], 
+    [View_INFO_FMV_HIS].[BOXNO] AS [BOXNO], 
+    [View_INFO_FMV_HIS].[FMVTJ_CODE] AS [FMVTJ_CODE], 
+    [View_INFO_FMV_HIS].[RACK] AS [RACK], 
+    [View_INFO_FMV_HIS].[IN_REMARK] AS [IN_REMARK], 
+    [View_INFO_FMV_HIS].[OUT_QTY] AS [OUT_QTY], 
+    [View_INFO_FMV_HIS].[OUT_DATE] AS [OUT_DATE], 
+    [View_INFO_FMV_HIS].[OUT_RACK] AS [OUT_RACK], 
+    [View_INFO_FMV_HIS].[HISTORY] AS [HISTORY], 
+    [View_INFO_FMV_HIS].[OUT_REMARK] AS [OUT_REMARK], 
+    [View_INFO_FMV_HIS].[CATEGORY] AS [CATEGORY], 
+    [View_INFO_FMV_HIS].[READY] AS [READY], 
+    [View_INFO_FMV_HIS].[QRCODE] AS [QRCODE]
+    FROM [dbo].[View_INFO_FMV_HIS] AS [View_INFO_FMV_HIS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_INFO_FMV_STK" EntityType="Self.View_INFO_FMV_STK" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_INFO_FMV_STK].[IDFMVSTK] AS [IDFMVSTK], 
+    [View_INFO_FMV_STK].[MCTYPE] AS [MCTYPE], 
+    [View_INFO_FMV_STK].[STATUS] AS [STATUS], 
+    [View_INFO_FMV_STK].[PARTNO] AS [PARTNO], 
+    [View_INFO_FMV_STK].[DESCRIPTION] AS [DESCRIPTION], 
+    [View_INFO_FMV_STK].[SERIALNO] AS [SERIALNO], 
+    [View_INFO_FMV_STK].[RATING] AS [RATING], 
+    [View_INFO_FMV_STK].[BALANCE] AS [BALANCE], 
+    [View_INFO_FMV_STK].[UNIT_COST] AS [UNIT_COST], 
+    [View_INFO_FMV_STK].[REMARK] AS [REMARK], 
+    [View_INFO_FMV_STK].[QTY] AS [QTY], 
+    [View_INFO_FMV_STK].[QTY_UNIT] AS [QTY_UNIT], 
+    [View_INFO_FMV_STK].[DATE] AS [DATE], 
+    [View_INFO_FMV_STK].[LOCATION_SHELFNO] AS [LOCATION_SHELFNO], 
+    [View_INFO_FMV_STK].[BOXNO] AS [BOXNO], 
+    [View_INFO_FMV_STK].[FMVTJ_CODE] AS [FMVTJ_CODE], 
+    [View_INFO_FMV_STK].[RACK] AS [RACK], 
+    [View_INFO_FMV_STK].[IN_REMARK] AS [IN_REMARK], 
+    [View_INFO_FMV_STK].[OUT_QTY] AS [OUT_QTY], 
+    [View_INFO_FMV_STK].[OUT_DATE] AS [OUT_DATE], 
+    [View_INFO_FMV_STK].[OUT_RACK] AS [OUT_RACK], 
+    [View_INFO_FMV_STK].[HISTORY] AS [HISTORY], 
+    [View_INFO_FMV_STK].[OUT_REMARK] AS [OUT_REMARK], 
+    [View_INFO_FMV_STK].[CATEGORY] AS [CATEGORY], 
+    [View_INFO_FMV_STK].[READY] AS [READY], 
+    [View_INFO_FMV_STK].[QRCODE] AS [QRCODE]
+    FROM [dbo].[View_INFO_FMV_STK] AS [View_INFO_FMV_STK]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_REP_MONTHLY" EntityType="Self.View_REP_MONTHLY" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_REP_MONTHLY].[IDMONTHLY] AS [IDMONTHLY], 
+    [View_REP_MONTHLY].[IDCUSTOMER] AS [IDCUSTOMER], 
+    [View_REP_MONTHLY].[IDSTAFF] AS [IDSTAFF], 
+    [View_REP_MONTHLY].[DATE] AS [DATE], 
+    [View_REP_MONTHLY].[DAY] AS [DAY], 
+    [View_REP_MONTHLY].[CHECKIN] AS [CHECKIN], 
+    [View_REP_MONTHLY].[CHECKOUT] AS [CHECKOUT], 
+    [View_REP_MONTHLY].[IDMCTYPE] AS [IDMCTYPE], 
+    [View_REP_MONTHLY].[LINE_NO] AS [LINE_NO], 
+    [View_REP_MONTHLY].[INSTALLATION_DATE] AS [INSTALLATION_DATE], 
+    [View_REP_MONTHLY].[ACTIVITY] AS [ACTIVITY], 
+    [View_REP_MONTHLY].[TRANSPORT] AS [TRANSPORT], 
+    [View_REP_MONTHLY].[SRNO] AS [SRNO], 
+    [View_REP_MONTHLY].[NATURE] AS [NATURE], 
+    [View_REP_MONTHLY].[CHARGEABLE] AS [CHARGEABLE], 
+    [View_REP_MONTHLY].[STAFFNAME] AS [STAFFNAME], 
+    [View_REP_MONTHLY].[CUSTOMERNAME] AS [CUSTOMERNAME], 
+    [View_REP_MONTHLY].[MCTYPE] AS [MCTYPE], 
+    [View_REP_MONTHLY].[BRAND] AS [BRAND], 
+    [View_REP_MONTHLY].[CREATE_DATE] AS [CREATE_DATE]
+    FROM [dbo].[View_REP_MONTHLY] AS [View_REP_MONTHLY]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -391,7 +871,21 @@ warning 6002: The table/view 'MyStockDB.dbo.View_HIS_PARTOUT' does not have a pr
           <EntitySet Name="View_HIS_PARTIN" EntityType="MyStockDBModel.View_HIS_PARTIN" />
           <EntitySet Name="T_INFO_JIG" EntityType="MyStockDBModel.T_INFO_JIG" />
           <EntitySet Name="T_INFO_PART" EntityType="MyStockDBModel.T_INFO_PART" />
-        </EntityContainer>
+          <EntitySet Name="T_INFO_FMA_EXPLAIN" EntityType="MyStockDBModel.T_INFO_FMA_EXPLAIN" />
+          <EntitySet Name="T_INFO_FMA_INDETAIL" EntityType="MyStockDBModel.T_INFO_FMA_INDETAIL" />
+          <EntitySet Name="T_INFO_FMA_OUTDETAIL" EntityType="MyStockDBModel.T_INFO_FMA_OUTDETAIL" />
+          <EntitySet Name="T_INFO_FMA_STK" EntityType="MyStockDBModel.T_INFO_FMA_STK" />
+          <EntitySet Name="T_INFO_FMV_FORSALE" EntityType="MyStockDBModel.T_INFO_FMV_FORSALE" />
+          <EntitySet Name="T_INFO_FMV_HIS" EntityType="MyStockDBModel.T_INFO_FMV_HIS" />
+          <EntitySet Name="T_INFO_FMV_STK" EntityType="MyStockDBModel.T_INFO_FMV_STK" />
+          <EntitySet Name="View_INFO_FMA_STK" EntityType="MyStockDBModel.View_INFO_FMA_STK" />
+          <EntitySet Name="View_INFO_FMV_FORSALE" EntityType="MyStockDBModel.View_INFO_FMV_FORSALE" />
+          <EntitySet Name="View_INFO_FMV_HIS" EntityType="MyStockDBModel.View_INFO_FMV_HIS" />
+          <EntitySet Name="View_INFO_FMV_STK" EntityType="MyStockDBModel.View_INFO_FMV_STK" />
+          <EntitySet Name="T_REP_MCTYPE" EntityType="MyStockDBModel.T_REP_MCTYPE" />
+          <EntitySet Name="T_REP_MONTHLY" EntityType="MyStockDBModel.T_REP_MONTHLY" />
+          <EntitySet Name="View_REP_MONTHLY" EntityType="MyStockDBModel.View_REP_MONTHLY" />
+          </EntityContainer>
         <EntityType Name="T_HIS_PARTIN">
           <Key>
             <PropertyRef Name="IDIN" />
@@ -534,7 +1028,322 @@ warning 6002: The table/view 'MyStockDB.dbo.View_HIS_PARTOUT' does not have a pr
           <Property Name="UPDATE_BY" Type="Int32" />
           <Property Name="STATUS" Type="Boolean" />
         </EntityType>
-      </Schema>
+        <EntityType Name="T_INFO_FMA_EXPLAIN">
+          <Key>
+            <PropertyRef Name="IDEXPLAIN" />
+          </Key>
+          <Property Name="IDEXPLAIN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMA_INDETAIL">
+          <Key>
+            <PropertyRef Name="IDINDETAIL" />
+            <PropertyRef Name="IDFMA" />
+          </Key>
+          <Property Name="IDINDETAIL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDFMA" Type="Int32" Nullable="false" />
+          <Property Name="CATEGORY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QTY" Type="Int32" />
+          <Property Name="QTY_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="LOCATION_SHELFNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BOXNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FMVTJ_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RACK" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="REMARK" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMA_OUTDETAIL">
+          <Key>
+            <PropertyRef Name="IDOUTDETAIL" />
+            <PropertyRef Name="IDFMA" />
+          </Key>
+          <Property Name="IDOUTDETAIL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDFMA" Type="Int32" Nullable="false" />
+          <Property Name="CATEGORY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QTY" Type="Int32" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="RACK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HISTORY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="REMARK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMA_STK">
+          <Key>
+            <PropertyRef Name="IDFMASTK" />
+          </Key>
+          <Property Name="IDFMASTK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MCTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PRODCODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SERIAL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BALANCE" Type="Int32" />
+          <Property Name="UNIT_COST_SGD" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DIFF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATE_BY" Type="Int32" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int32" />
+          <Property Name="READY" Type="Boolean" />
+          <Property Name="QRCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMV_FORSALE">
+          <Key>
+            <PropertyRef Name="IDFMVSALE" />
+          </Key>
+          <Property Name="IDFMVSALE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MCTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PARTNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SERIALNO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGIN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BALANCE" Type="Int32" />
+          <Property Name="UNIT_COST_JPY" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATE_BY" Type="Int32" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int32" />
+          <Property Name="READY" Type="Boolean" />
+          <Property Name="QRCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMV_HIS">
+          <Key>
+            <PropertyRef Name="IDFMVHIS" />
+          </Key>
+          <Property Name="IDFMVHIS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MCTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PRODCODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SERIALNO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="BALANCE" Type="Int32" />
+          <Property Name="UNIT_COST_SGD" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATE_BY" Type="Int32" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int32" />
+          <Property Name="READY" Type="Boolean" />
+          <Property Name="QRCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_INFO_FMV_STK">
+          <Key>
+            <PropertyRef Name="IDFMVSTK" />
+          </Key>
+          <Property Name="IDFMVSTK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MCTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PARTNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SERIALNO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BALANCE" Type="Int32" />
+          <Property Name="UNIT_COST" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATE_BY" Type="Int32" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int32" />
+          <Property Name="READY" Type="Boolean" />
+          <Property Name="QRCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_INFO_FMA_STK">
+          <Key>
+            <PropertyRef Name="IDFMASTK" />
+            <PropertyRef Name="CATEGORY" />
+          </Key>
+          <Property Name="IDFMASTK" Type="Int32" Nullable="false" />
+          <Property Name="MCTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PRODCODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SERIAL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BALANCE" Type="Int32" />
+          <Property Name="UNIT_COST_SGD" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DIFF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QTY" Type="Int32" />
+          <Property Name="QTY_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="LOCATION_SHELFNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BOXNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FMVTJ_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RACK" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IN_REMARK" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="OUT_QTY" Type="Int32" />
+          <Property Name="OUT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="OUT_RACK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HISTORY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OUT_REMARK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CATEGORY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="READY" Type="Boolean" />
+          <Property Name="QRCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_INFO_FMV_FORSALE">
+          <Key>
+            <PropertyRef Name="IDFMVSALE" />
+            <PropertyRef Name="CATEGORY" />
+          </Key>
+          <Property Name="IDFMVSALE" Type="Int32" Nullable="false" />
+          <Property Name="MCTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PARTNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SERIALNO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGIN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BALANCE" Type="Int32" />
+          <Property Name="UNIT_COST_JPY" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QTY" Type="Int32" />
+          <Property Name="QTY_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="LOCATION_SHELFNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BOXNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FMVTJ_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RACK" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IN_REMARK" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="OUT_QTY" Type="Int32" />
+          <Property Name="OUT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="OUT_RACK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HISTORY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OUT_REMARK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CATEGORY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="READY" Type="Boolean" />
+          <Property Name="QRCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_INFO_FMV_HIS">
+          <Key>
+            <PropertyRef Name="IDFMVHIS" />
+            <PropertyRef Name="CATEGORY" />
+          </Key>
+          <Property Name="IDFMVHIS" Type="Int32" Nullable="false" />
+          <Property Name="MCTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PRODCODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SERIALNO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="BALANCE" Type="Int32" />
+          <Property Name="UNIT_COST_SGD" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QTY" Type="Int32" />
+          <Property Name="QTY_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="LOCATION_SHELFNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BOXNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FMVTJ_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RACK" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IN_REMARK" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="OUT_QTY" Type="Int32" />
+          <Property Name="OUT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="OUT_RACK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HISTORY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OUT_REMARK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CATEGORY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="READY" Type="Boolean" />
+          <Property Name="QRCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_INFO_FMV_STK">
+          <Key>
+            <PropertyRef Name="IDFMVSTK" />
+            <PropertyRef Name="CATEGORY" />
+          </Key>
+          <Property Name="IDFMVSTK" Type="Int32" Nullable="false" />
+          <Property Name="MCTYPE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PARTNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SERIALNO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BALANCE" Type="Int32" />
+          <Property Name="UNIT_COST" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="REMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QTY" Type="Int32" />
+          <Property Name="QTY_UNIT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="LOCATION_SHELFNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BOXNO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FMVTJ_CODE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RACK" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IN_REMARK" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="OUT_QTY" Type="Int32" />
+          <Property Name="OUT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="OUT_RACK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HISTORY" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OUT_REMARK" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CATEGORY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="READY" Type="Boolean" />
+          <Property Name="QRCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_REP_MCTYPE">
+          <Key>
+            <PropertyRef Name="IDMCTYPE" />
+          </Key>
+          <Property Name="IDMCTYPE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BRAND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MCTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_REP_MONTHLY">
+          <Key>
+            <PropertyRef Name="IDMONTHLY" />
+          </Key>
+          <Property Name="IDMONTHLY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCUSTOMER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IDSTAFF" Type="Int32" Nullable="false" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="DAY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHECKIN" Type="Time" Precision="7" />
+          <Property Name="CHECKOUT" Type="Time" Precision="7" />
+          <Property Name="IDMCTYPE" Type="Int32" />
+          <Property Name="LINE_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INSTALLATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ACTIVITY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSPORT" Type="Int32" />
+          <Property Name="SRNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NATURE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CHARGEABLE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATE_BY" Type="Int32" />
+          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATE_BY" Type="Int32" />
+        </EntityType>
+        <EntityType Name="View_REP_MONTHLY">
+          <Key>
+            <PropertyRef Name="IDMONTHLY" />
+            <PropertyRef Name="IDCUSTOMER" />
+            <PropertyRef Name="IDSTAFF" />
+          </Key>
+          <Property Name="IDMONTHLY" Type="Int32" Nullable="false" />
+          <Property Name="IDCUSTOMER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IDSTAFF" Type="Int32" Nullable="false" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+          <Property Name="DAY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHECKIN" Type="Time" Precision="7" />
+          <Property Name="CHECKOUT" Type="Time" Precision="7" />
+          <Property Name="IDMCTYPE" Type="Int32" />
+          <Property Name="LINE_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INSTALLATION_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ACTIVITY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TRANSPORT" Type="Int32" />
+          <Property Name="SRNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NATURE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CHARGEABLE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="STAFFNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTOMERNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MCTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BRAND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -766,7 +1575,328 @@ warning 6002: The table/view 'MyStockDB.dbo.View_HIS_PARTOUT' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="T_INFO_FMA_EXPLAIN">
+            <EntityTypeMapping TypeName="MyStockDBModel.T_INFO_FMA_EXPLAIN">
+              <MappingFragment StoreEntitySet="T_INFO_FMA_EXPLAIN">
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="IDEXPLAIN" ColumnName="IDEXPLAIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INFO_FMA_INDETAIL">
+            <EntityTypeMapping TypeName="MyStockDBModel.T_INFO_FMA_INDETAIL">
+              <MappingFragment StoreEntitySet="T_INFO_FMA_INDETAIL">
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="RACK" ColumnName="RACK" />
+                <ScalarProperty Name="FMVTJ_CODE" ColumnName="FMVTJ_CODE" />
+                <ScalarProperty Name="BOXNO" ColumnName="BOXNO" />
+                <ScalarProperty Name="LOCATION_SHELFNO" ColumnName="LOCATION_SHELFNO" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="QTY_UNIT" ColumnName="QTY_UNIT" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="IDFMA" ColumnName="IDFMA" />
+                <ScalarProperty Name="IDINDETAIL" ColumnName="IDINDETAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INFO_FMA_OUTDETAIL">
+            <EntityTypeMapping TypeName="MyStockDBModel.T_INFO_FMA_OUTDETAIL">
+              <MappingFragment StoreEntitySet="T_INFO_FMA_OUTDETAIL">
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="HISTORY" ColumnName="HISTORY" />
+                <ScalarProperty Name="RACK" ColumnName="RACK" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="IDFMA" ColumnName="IDFMA" />
+                <ScalarProperty Name="IDOUTDETAIL" ColumnName="IDOUTDETAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INFO_FMA_STK">
+            <EntityTypeMapping TypeName="MyStockDBModel.T_INFO_FMA_STK">
+              <MappingFragment StoreEntitySet="T_INFO_FMA_STK">
+                <ScalarProperty Name="QRCODE" ColumnName="QRCODE" />
+                <ScalarProperty Name="READY" ColumnName="READY" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="DIFF" ColumnName="DIFF" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="UNIT_COST_SGD" ColumnName="UNIT_COST_SGD" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+                <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PRODCODE" ColumnName="PRODCODE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="IDFMASTK" ColumnName="IDFMASTK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INFO_FMV_FORSALE">
+            <EntityTypeMapping TypeName="MyStockDBModel.T_INFO_FMV_FORSALE">
+              <MappingFragment StoreEntitySet="T_INFO_FMV_FORSALE">
+                <ScalarProperty Name="QRCODE" ColumnName="QRCODE" />
+                <ScalarProperty Name="READY" ColumnName="READY" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="UNIT_COST_JPY" ColumnName="UNIT_COST_JPY" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+                <ScalarProperty Name="ORIGIN" ColumnName="ORIGIN" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PARTNO" ColumnName="PARTNO" />
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="IDFMVSALE" ColumnName="IDFMVSALE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INFO_FMV_HIS">
+            <EntityTypeMapping TypeName="MyStockDBModel.T_INFO_FMV_HIS">
+              <MappingFragment StoreEntitySet="T_INFO_FMV_HIS">
+                <ScalarProperty Name="QRCODE" ColumnName="QRCODE" />
+                <ScalarProperty Name="READY" ColumnName="READY" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="UNIT_COST_SGD" ColumnName="UNIT_COST_SGD" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PRODCODE" ColumnName="PRODCODE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="IDFMVHIS" ColumnName="IDFMVHIS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_INFO_FMV_STK">
+            <EntityTypeMapping TypeName="MyStockDBModel.T_INFO_FMV_STK">
+              <MappingFragment StoreEntitySet="T_INFO_FMV_STK">
+                <ScalarProperty Name="QRCODE" ColumnName="QRCODE" />
+                <ScalarProperty Name="READY" ColumnName="READY" />
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="UNIT_COST" ColumnName="UNIT_COST" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PARTNO" ColumnName="PARTNO" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="IDFMVSTK" ColumnName="IDFMVSTK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_INFO_FMA_STK">
+            <EntityTypeMapping TypeName="MyStockDBModel.View_INFO_FMA_STK">
+              <MappingFragment StoreEntitySet="View_INFO_FMA_STK">
+                <ScalarProperty Name="QRCODE" ColumnName="QRCODE" />
+                <ScalarProperty Name="READY" ColumnName="READY" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="OUT_REMARK" ColumnName="OUT_REMARK" />
+                <ScalarProperty Name="HISTORY" ColumnName="HISTORY" />
+                <ScalarProperty Name="OUT_RACK" ColumnName="OUT_RACK" />
+                <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+                <ScalarProperty Name="OUT_QTY" ColumnName="OUT_QTY" />
+                <ScalarProperty Name="IN_REMARK" ColumnName="IN_REMARK" />
+                <ScalarProperty Name="RACK" ColumnName="RACK" />
+                <ScalarProperty Name="FMVTJ_CODE" ColumnName="FMVTJ_CODE" />
+                <ScalarProperty Name="BOXNO" ColumnName="BOXNO" />
+                <ScalarProperty Name="LOCATION_SHELFNO" ColumnName="LOCATION_SHELFNO" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="QTY_UNIT" ColumnName="QTY_UNIT" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="DIFF" ColumnName="DIFF" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="UNIT_COST_SGD" ColumnName="UNIT_COST_SGD" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+                <ScalarProperty Name="SERIAL" ColumnName="SERIAL" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PRODCODE" ColumnName="PRODCODE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="IDFMASTK" ColumnName="IDFMASTK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_INFO_FMV_FORSALE">
+            <EntityTypeMapping TypeName="MyStockDBModel.View_INFO_FMV_FORSALE">
+              <MappingFragment StoreEntitySet="View_INFO_FMV_FORSALE">
+                <ScalarProperty Name="QRCODE" ColumnName="QRCODE" />
+                <ScalarProperty Name="READY" ColumnName="READY" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="OUT_REMARK" ColumnName="OUT_REMARK" />
+                <ScalarProperty Name="HISTORY" ColumnName="HISTORY" />
+                <ScalarProperty Name="OUT_RACK" ColumnName="OUT_RACK" />
+                <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+                <ScalarProperty Name="OUT_QTY" ColumnName="OUT_QTY" />
+                <ScalarProperty Name="IN_REMARK" ColumnName="IN_REMARK" />
+                <ScalarProperty Name="RACK" ColumnName="RACK" />
+                <ScalarProperty Name="FMVTJ_CODE" ColumnName="FMVTJ_CODE" />
+                <ScalarProperty Name="BOXNO" ColumnName="BOXNO" />
+                <ScalarProperty Name="LOCATION_SHELFNO" ColumnName="LOCATION_SHELFNO" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="QTY_UNIT" ColumnName="QTY_UNIT" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="UNIT_COST_JPY" ColumnName="UNIT_COST_JPY" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+                <ScalarProperty Name="ORIGIN" ColumnName="ORIGIN" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PARTNO" ColumnName="PARTNO" />
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="IDFMVSALE" ColumnName="IDFMVSALE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_INFO_FMV_HIS">
+            <EntityTypeMapping TypeName="MyStockDBModel.View_INFO_FMV_HIS">
+              <MappingFragment StoreEntitySet="View_INFO_FMV_HIS">
+                <ScalarProperty Name="QRCODE" ColumnName="QRCODE" />
+                <ScalarProperty Name="READY" ColumnName="READY" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="OUT_REMARK" ColumnName="OUT_REMARK" />
+                <ScalarProperty Name="HISTORY" ColumnName="HISTORY" />
+                <ScalarProperty Name="OUT_RACK" ColumnName="OUT_RACK" />
+                <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+                <ScalarProperty Name="OUT_QTY" ColumnName="OUT_QTY" />
+                <ScalarProperty Name="IN_REMARK" ColumnName="IN_REMARK" />
+                <ScalarProperty Name="RACK" ColumnName="RACK" />
+                <ScalarProperty Name="FMVTJ_CODE" ColumnName="FMVTJ_CODE" />
+                <ScalarProperty Name="BOXNO" ColumnName="BOXNO" />
+                <ScalarProperty Name="LOCATION_SHELFNO" ColumnName="LOCATION_SHELFNO" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="QTY_UNIT" ColumnName="QTY_UNIT" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="UNIT_COST_SGD" ColumnName="UNIT_COST_SGD" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PRODCODE" ColumnName="PRODCODE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="IDFMVHIS" ColumnName="IDFMVHIS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_INFO_FMV_STK">
+            <EntityTypeMapping TypeName="MyStockDBModel.View_INFO_FMV_STK">
+              <MappingFragment StoreEntitySet="View_INFO_FMV_STK">
+                <ScalarProperty Name="QRCODE" ColumnName="QRCODE" />
+                <ScalarProperty Name="READY" ColumnName="READY" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="OUT_REMARK" ColumnName="OUT_REMARK" />
+                <ScalarProperty Name="HISTORY" ColumnName="HISTORY" />
+                <ScalarProperty Name="OUT_RACK" ColumnName="OUT_RACK" />
+                <ScalarProperty Name="OUT_DATE" ColumnName="OUT_DATE" />
+                <ScalarProperty Name="OUT_QTY" ColumnName="OUT_QTY" />
+                <ScalarProperty Name="IN_REMARK" ColumnName="IN_REMARK" />
+                <ScalarProperty Name="RACK" ColumnName="RACK" />
+                <ScalarProperty Name="FMVTJ_CODE" ColumnName="FMVTJ_CODE" />
+                <ScalarProperty Name="BOXNO" ColumnName="BOXNO" />
+                <ScalarProperty Name="LOCATION_SHELFNO" ColumnName="LOCATION_SHELFNO" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="QTY_UNIT" ColumnName="QTY_UNIT" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="UNIT_COST" ColumnName="UNIT_COST" />
+                <ScalarProperty Name="BALANCE" ColumnName="BALANCE" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="SERIALNO" ColumnName="SERIALNO" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="PARTNO" ColumnName="PARTNO" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="IDFMVSTK" ColumnName="IDFMVSTK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_REP_MCTYPE">
+            <EntityTypeMapping TypeName="MyStockDBModel.T_REP_MCTYPE">
+              <MappingFragment StoreEntitySet="T_REP_MCTYPE">
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="BRAND" ColumnName="BRAND" />
+                <ScalarProperty Name="IDMCTYPE" ColumnName="IDMCTYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_REP_MONTHLY">
+            <EntityTypeMapping TypeName="MyStockDBModel.T_REP_MONTHLY">
+              <MappingFragment StoreEntitySet="T_REP_MONTHLY">
+                <ScalarProperty Name="UPDATE_BY" ColumnName="UPDATE_BY" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+                <ScalarProperty Name="CREATE_BY" ColumnName="CREATE_BY" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="CHARGEABLE" ColumnName="CHARGEABLE" />
+                <ScalarProperty Name="NATURE" ColumnName="NATURE" />
+                <ScalarProperty Name="SRNO" ColumnName="SRNO" />
+                <ScalarProperty Name="TRANSPORT" ColumnName="TRANSPORT" />
+                <ScalarProperty Name="ACTIVITY" ColumnName="ACTIVITY" />
+                <ScalarProperty Name="INSTALLATION_DATE" ColumnName="INSTALLATION_DATE" />
+                <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+                <ScalarProperty Name="IDMCTYPE" ColumnName="IDMCTYPE" />
+                <ScalarProperty Name="CHECKOUT" ColumnName="CHECKOUT" />
+                <ScalarProperty Name="CHECKIN" ColumnName="CHECKIN" />
+                <ScalarProperty Name="DAY" ColumnName="DAY" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="IDSTAFF" ColumnName="IDSTAFF" />
+                <ScalarProperty Name="IDCUSTOMER" ColumnName="IDCUSTOMER" />
+                <ScalarProperty Name="IDMONTHLY" ColumnName="IDMONTHLY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_REP_MONTHLY">
+            <EntityTypeMapping TypeName="MyStockDBModel.View_REP_MONTHLY">
+              <MappingFragment StoreEntitySet="View_REP_MONTHLY">
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="BRAND" ColumnName="BRAND" />
+                <ScalarProperty Name="MCTYPE" ColumnName="MCTYPE" />
+                <ScalarProperty Name="CUSTOMERNAME" ColumnName="CUSTOMERNAME" />
+                <ScalarProperty Name="STAFFNAME" ColumnName="STAFFNAME" />
+                <ScalarProperty Name="CHARGEABLE" ColumnName="CHARGEABLE" />
+                <ScalarProperty Name="NATURE" ColumnName="NATURE" />
+                <ScalarProperty Name="SRNO" ColumnName="SRNO" />
+                <ScalarProperty Name="TRANSPORT" ColumnName="TRANSPORT" />
+                <ScalarProperty Name="ACTIVITY" ColumnName="ACTIVITY" />
+                <ScalarProperty Name="INSTALLATION_DATE" ColumnName="INSTALLATION_DATE" />
+                <ScalarProperty Name="LINE_NO" ColumnName="LINE_NO" />
+                <ScalarProperty Name="IDMCTYPE" ColumnName="IDMCTYPE" />
+                <ScalarProperty Name="CHECKOUT" ColumnName="CHECKOUT" />
+                <ScalarProperty Name="CHECKIN" ColumnName="CHECKIN" />
+                <ScalarProperty Name="DAY" ColumnName="DAY" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="IDSTAFF" ColumnName="IDSTAFF" />
+                <ScalarProperty Name="IDCUSTOMER" ColumnName="IDCUSTOMER" />
+                <ScalarProperty Name="IDMONTHLY" ColumnName="IDMONTHLY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

@@ -110,7 +110,7 @@ namespace FMV_SYSTEM_MANAGEMENT
                         frm2.Parent = fluentDesignFormContainer1;
                         break;
                     default:
-                        MessageBox.Show("You dont have permission to access this function");
+                        XtraMessageBox.Show("You dont have permission to access this function");
                         break;
                 }
             }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FMV_SYSTEM_MANAGEMENTS.Test;
 using FMV_SYSTEM_MANAGEMENTS.Views;
+using FMV_SYSTEM_MANAGEMENTS.Views.Monthly;
 
 namespace FMV_SYSTEM_MANAGEMENTS
 {
@@ -13,13 +14,14 @@ namespace FMV_SYSTEM_MANAGEMENTS
     {
         public static FMV_SYSTEM_MANAGEMENTS.Logger log = new FMV_SYSTEM_MANAGEMENTS.Logger();
         public static string _userLogin = "";
+        public static DateTime offset = new DateTime(2024, 05, 01, 00, 00, 00);
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            DateTime offset = new DateTime(2024, 04, 01, 00, 00, 00);
+            
             if (DateTime.Now < offset)
             {
                 if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "setadd.dat"))
@@ -29,7 +31,9 @@ namespace FMV_SYSTEM_MANAGEMENTS
                     {
                         Application.EnableVisualStyles();
                         Application.SetCompatibleTextRenderingDefault(false);
-                        Application.Run(new fFirst_Login());
+                        //Application.Run(new fFirst_Login());
+                        Application.Run(new fMonthly());
+                        //Application.Run(new fTest2());
                     }
                 }
             }

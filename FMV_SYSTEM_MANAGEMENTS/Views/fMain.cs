@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
+using DevExpress.XtraEditors;
 using FMV_SYSTEM_MANAGEMENTS.Controlers;
 using System;
 using System.Collections.Generic;
@@ -177,7 +178,7 @@ namespace FMV_SYSTEM_MANAGEMENTS.Views
                         frm5.Parent = fluentDesignFormContainer1;
                         break;
                     default:
-                        MessageBox.Show("You dont have permission to access this function");
+                        XtraMessageBox.Show("You dont have permission to access this function");
                         break;
                 }
             }
@@ -258,12 +259,12 @@ namespace FMV_SYSTEM_MANAGEMENTS.Views
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
             string msg = "FUJI MACHINE VIETNAM CO.,LTD \r\n        Product by FMV - Tai";
-            MessageBox.Show(msg, "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            XtraMessageBox.Show(msg, "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void fMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Program.log.LogMsg(Logger.LogLevel.FATAL, "Application exit with User [{0}]", Program._userLogin);
+            Program.log.LogMsg(Logger.LogLevel.INFO, "Application exit with User [{0}]", Program._userLogin);
             Application.Exit();
         }
     }
